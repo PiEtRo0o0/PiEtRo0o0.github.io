@@ -74,7 +74,7 @@ a{
 }
 
 .picturebox{
-  columns: 2;
+  columns: 4;
  column-gap:10px;
 }
 
@@ -103,9 +103,9 @@ img:hover{
 }
 
 
-@media screen and (min-width: 2800px) {
+@media screen and (max-width: 2600px) {
     .picturebox{
-      columns:4;
+      columns: 2;
     }
   }
 
