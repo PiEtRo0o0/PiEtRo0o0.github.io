@@ -103,13 +103,13 @@ img:hover{
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 600px) {
     .picturebox{
       columns: 2;
     }
   }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 200px) {
 
     .picturebox{
       columns:1;
