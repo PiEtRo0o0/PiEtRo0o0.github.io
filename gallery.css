@@ -74,8 +74,7 @@ a{
 }
 
 .picturebox{
-
- columns: 2;
+  columns: 2;
  column-gap:10px;
 }
 
@@ -111,11 +110,17 @@ img:hover{
   }
 
 @media screen and (max-width: 1500px) {
+
     .picturebox{
       columns:1;
     }
     .categoryname{
-        font-size:22px;
+        font-size:7px;
+        top:0px;
+    }
+
+    .text{
+      font-size:10px;
     }
   }
 
