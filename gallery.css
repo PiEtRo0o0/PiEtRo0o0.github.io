@@ -108,16 +108,3 @@ img:hover{
     transition-duration:0.3s;
 }
 
-
-@media screen and (max-width:300px) {
-    .picturebox{
-      columns: 2;
-    }
-
-    .categoryname{
-      font-size:13px;
-      top:0px;
-  }
-
-    .text{
-      font-size:13px;}}
