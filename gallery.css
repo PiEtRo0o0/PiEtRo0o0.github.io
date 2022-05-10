@@ -15,6 +15,7 @@ a{
   color: blue;
 }
 
+
 .loader{
     position: fixed;
     z-index: 5;
@@ -27,6 +28,11 @@ a{
     justify-content: center;
     align-items: center;
   }
+
+  
+  .gif{
+    width: 50px;
+}
   
 .disppear{
     animation: vanish 1s forwards;
@@ -74,7 +80,7 @@ a{
 }
 
 .picturebox{
-  columns: 4;
+  columns: 3;
  column-gap:10px;
 }
 
@@ -84,11 +90,11 @@ position: relative;
 margin-bottom: 10px;
 }
 .text{
-  font-size:30px;
+  font-size:18px;
   position:absolute;
   z-index:-2;
   margin-left:10px;
-  margin: top 5px;;
+  margin: top 5px;
 }
 
 img{
@@ -103,9 +109,18 @@ img:hover{
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     .picturebox{
       columns: 2;
+    }
+
+    .categoryname{
+      font-size:13px;
+      top:0px;
+  }
+
+    .text{
+      font-size:13px;
     }
   }
 
@@ -122,8 +137,4 @@ img:hover{
     .text{
       font-size:10px;
     }
-  }
-
-  .gif{
-      width: 50px;
   }
