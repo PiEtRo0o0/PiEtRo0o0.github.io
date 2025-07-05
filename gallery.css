@@ -40,7 +40,11 @@ a {
   justify-content: center;
   align-items: center;
 }
-
+.disappear {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
 .gif {
   width: 50px;
 }
