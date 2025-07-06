@@ -38,9 +38,11 @@
 
     /* Common column styles */
     .gallerycolumn {
-      flex-basis: 100%;
-      overflow-y: scroll;
+      flex: 1;               /* Take equal width */
+      overflow-y: auto;      /* Scroll vertically if content overflows */
       height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .categoryname {
@@ -55,17 +57,23 @@
       color: white;
       text-align: center;
       border-radius: 8px;
+      flex-shrink: 0; /* prevent shrinking when scrolling */
     }
 
     /* Paintings & Collage columns */
     .picturebox {
       columns: 3;
       column-gap: 10px;
+      flex-grow: 1;
+      overflow-y: auto;
     }
 
     .desc {
       position: relative;
       margin-bottom: 10px;
+      break-inside: avoid; /* avoid breaking images between columns */
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
     }
 
     img {
@@ -99,6 +107,9 @@
       .gallerycolumn {
         height: auto;
         margin-bottom: 40px;
+      }
+      .picturebox {
+        columns: 1;
       }
     }
   </style>
