@@ -10,18 +10,12 @@ body {
   font-family: 'SangBleu', serif;
   margin: 0;
   color: #222222;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-body {
-  background: linear-gradient(90deg, #F28500, #CCCCFF);
-  font-family: 'SangBleu', serif;
-  margin: 0;
-  color: #222222;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
 }
 
 a {
@@ -40,11 +34,13 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 .disappear {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 }
+
 .gif {
   width: 50px;
 }
@@ -151,4 +147,54 @@ img:hover {
   .text {
     font-size: 10px;
   }
+}
+
+/* === Writing Section Styles === */
+.writingcolumn {
+  margin-top: 20px;
+  flex-basis: 100%;
+  overflow-y: scroll;
+  height: 92vh;
+  padding-right: 10px;
+}
+
+.writingbox {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-right: 20px;
+}
+
+.textpost {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.textpost h3 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+}
+
+.excerpt {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.pdflink {
+  color: #0033cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.pdflink:hover {
+  text-decoration: underline;
+}
+
+.thumb {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
