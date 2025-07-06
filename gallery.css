@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gallery + Writings</title>
+  <title>Gallery</title>
   <style>
     @font-face {
       font-family: 'SangBleu';
@@ -37,7 +37,7 @@
     }
 
     /* Common column styles */
-    .gallerycolumn, .writingcolumn {
+    .gallerycolumn {
       flex-basis: 100%;
       overflow-y: scroll;
       height: 100%;
@@ -80,41 +80,6 @@
       opacity: 0.2;
     }
 
-    /* Writing column */
-    .writingbox {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      padding-right: 20px;
-    }
-
-    .textpost {
-      background-color: #f9f9f9;
-      padding: 15px;
-      border-radius: 15px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .textpost h3 {
-      margin: 10px 0 5px;
-      font-size: 20px;
-    }
-
-    .excerpt {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .pdflink {
-      color: #0033cc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .pdflink:hover {
-      text-decoration: underline;
-    }
-
     /* Responsive tweaks */
     @media screen and (max-width: 1200px) {
       .picturebox {
@@ -124,10 +89,6 @@
       .categoryname {
         font-size: 24px;
       }
-
-      .textpost h3 {
-        font-size: 18px;
-      }
     }
 
     @media screen and (max-width: 800px) {
@@ -135,7 +96,7 @@
         flex-direction: column;
         height: auto;
       }
-      .gallerycolumn, .writingcolumn {
+      .gallerycolumn {
         height: auto;
         margin-bottom: 40px;
       }
@@ -144,7 +105,7 @@
 </head>
 <body>
 
-  <h1 class="header">My Art and Writing Gallery</h1>
+  <h1 class="header">My Art Gallery</h1>
 
   <div id="gallerybox">
 
@@ -177,23 +138,6 @@
           <div class="text">Collage 2 Description</div>
         </div>
         <!-- Add more collages here -->
-      </div>
-    </div>
-
-    <!-- Writings column -->
-    <div class="writingcolumn">
-      <div class="categoryname">Writings</div>
-      <div class="writingbox">
-        <div class="textpost">
-          <h3>In the Shape of the Marred</h3>
-          <p class="excerpt">
-            A short essay on violence as a divine language, an interface, designed to interact with human affairs, written in 2024.
-          </p>
-          <a class="pdflink" href="writings/in-the-shape-of-the-marred.pdf" target="_blank" rel="noopener noreferrer">
-            Read PDF
-          </a>
-        </div>
-        <!-- Add more writings similarly -->
       </div>
     </div>
 
