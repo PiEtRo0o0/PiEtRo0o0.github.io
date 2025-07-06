@@ -14,27 +14,78 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
   <style>
-    /* Loader styles */
-    .loader {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease;
-    }
-    .loader.hidden {
-      opacity: 0;
-      pointer-events: none;
-      visibility: hidden;
-    }
-    .loader img.gif {
-      width: 100px;
-      height: 100px;
-      /* adjust size as needed */
-    }
+.loader {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+.loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.loader img.gif {
+  width: 100px;
+  height: 100px;
+}
+
+/* Gallery image hover effect */
+.desc {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.desc img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease;
+}
+
+.desc:hover img {
+  opacity: 0.3;
+}
+
+/* Gradient overlay */
+.desc::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(242, 133, 0, 0.8), rgba(204, 204, 255, 0.8));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  border-radius: 5px;
+}
+
+.desc:hover::after {
+  opacity: 1;
+}
+
+/* Text overlay *
+.desc .text {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.desc:hover .text {
+  opacity: 1;
+}
   </style>
 </head>
 
