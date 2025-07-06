@@ -14,97 +14,88 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
   <style>
-.loader {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease;
-}
-.loader.hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
-.loader img.gif {
-  width: 100px;
-  height: 100px;
-}
+    /* Make desc container relative for overlay */
+    .picturebox .desc {
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
 
-/* Gallery image hover effect */
-.desc {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 5px;
-}
+    /* Images full width with rounded corners and transition */
+    .picturebox .desc img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      transition: opacity 0.3s ease;
+    }
 
-.desc img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: opacity 0.5s ease;
-}
+    /* Dim image on hover */
+    .picturebox .desc:hover img {
+      opacity: 0.3;
+    }
 
-.desc:hover img {
-  opacity: 0.3;
-}
+    /* Gradient overlay hidden by default */
+    .picturebox .desc::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.75) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      border-radius: 5px;
+      z-index: 2;
+    }
 
-/* Gradient overlay */
-.desc::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(180deg, rgba(242, 133, 0, 0.8), rgba(204, 204, 255, 0.8));
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-  border-radius: 5px;
-}
+    /* Show gradient overlay on hover */
+    .picturebox .desc:hover::before {
+      opacity: 1;
+    }
 
-.desc:hover::after {
-  opacity: 1;
-}
+    /* Text overlay, positioned bottom, hidden by default */
+    .picturebox .desc .text {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      color: white;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 3;
+      pointer-events: none;
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    }
 
-/* Text overlay *
-.desc .text {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  right: 15px;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-.desc:hover .text {
-  opacity: 1;
-}
+    /* Show text on hover */
+    .picturebox .desc:hover .text {
+      opacity: 1;
+    }
   </style>
 </head>
 
 <body>
   <div class="loader">
-    <img class="gif" src="loader-gif/XVo6.gif" alt="Loading..." />
+    <img class="gif" src="loader-gif/XVo6.gif" alt="" />
   </div>
 
   <div class="header">
     <div class="helement">PIETRO GORINI</div>
-    <a class="helement" href="about.html" target="_blank" rel="noopener noreferrer">about</a>
+    <a class="helement" href="about.html" target="_blank">about</a>
   </div>
 
-<div id="gallerybox">
-  <div class="gallerycolumn">
-    <div class="picturebox">
-      <a class="descbox" target="_blank" href="stART_compressed/img01.jpg">
-        <div class="desc"> 
-          <div class="text">(to worship), 210x240 cm, oil on canvas.</div> 
+  <div id="gallerybox">
+    <div class="gallerycolumn">
+      <div class="picturebox">
+        <div class="desc">
+          <img src="stART_compressed/img01.jpg" alt="(to worship), 210x240 cm, oil on canvas." />
+          <div class="text">(to worship), 210x240 cm, oil on canvas.</div>
+        </div>
           <img src="stART_compressed/img01.jpg" alt="" style="width: 100%; height: auto; max-width: 800px;">
         </div>
       </a>
