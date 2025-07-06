@@ -10,21 +10,24 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
   <style>
-    /* Make desc container relative for overlay */
+    /* Loader GIF sizing */
+    .loader img.gif {
+      width: 100px;  /* change this to what you want */
+      height: 100px;
+      object-fit: contain;
+    }
+
+    /* Your existing picturebox and hover styles here */
     .picturebox .desc {
       position: relative;
       overflow: hidden;
       border-radius: 5px;
       margin-bottom: 10px;
       cursor: pointer;
-      display: block;
     }
-
-    /* Images full width with rounded corners and transition */
     .picturebox .desc img {
       display: block;
       width: 100%;
@@ -32,13 +35,9 @@
       border-radius: 5px;
       transition: opacity 0.3s ease;
     }
-
-    /* Dim image on hover */
     .picturebox .desc:hover img {
       opacity: 0.3;
     }
-
-    /* Gradient overlay hidden by default */
     .picturebox .desc::before {
       content: "";
       position: absolute;
@@ -50,13 +49,9 @@
       border-radius: 5px;
       z-index: 2;
     }
-
-    /* Show gradient overlay on hover */
     .picturebox .desc:hover::before {
       opacity: 1;
     }
-
-    /* Text overlay, positioned bottom, hidden by default */
     .picturebox .desc .text {
       position: absolute;
       bottom: 12px;
@@ -72,8 +67,6 @@
       pointer-events: none;
       text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
     }
-
-    /* Show text on hover */
     .picturebox .desc:hover .text {
       opacity: 1;
     }
