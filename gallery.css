@@ -62,7 +62,7 @@
 
     /* Paintings & Collage columns */
     .picturebox {
-      columns: 3;
+      columns: 1;
       column-gap: 10px;
       flex-grow: 1;
       overflow-y: auto;
@@ -90,7 +90,7 @@
 
     @media screen and (max-width: 1200px) {
       .picturebox {
-        columns: 2;
+        columns: 1;
       }
 
       .categoryname {
