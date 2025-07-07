@@ -57,15 +57,14 @@
       color: white;
       text-align: center;
       border-radius: 8px;
-      flex-shrink: 0; /* prevent shrinking when scrolling */
+      flex-shrink: 0; 
     }
 
-    /* Paintings & Collage columns */
+    
     .picturebox {
-      columns: 1;
-      column-gap: 10px;
-      flex-grow: 1;
-      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px; 
     }
 
     .desc {
