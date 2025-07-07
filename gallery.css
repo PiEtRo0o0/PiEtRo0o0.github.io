@@ -17,8 +17,8 @@
       font-family: 'SangBleu', serif;
       margin: 0;
       color: #222222;
-      -ms-overflow-style: none; 
-      scrollbar-width: none; 
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
     ::-webkit-scrollbar {
@@ -31,46 +31,18 @@
 
     #gallerybox {
       margin: 20px 30px 30px;
-      display: flex;
-      column-gap: 60px;
-      height: 92vh;
     }
 
-    
-    .gallerycolumn {
-      flex: 1;           
-      overflow-y: auto;     
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .categoryname {
-      position: sticky;
-      top: 0;
-      background: #F28500;
-      padding: 10px 0;
-      margin-bottom: 30px;
-      font-size: 33px;
-      font-weight: bold;
-      z-index: 10;
-      color: white;
-      text-align: center;
-      border-radius: 8px;
-      flex-shrink: 0; 
-    }
-
-    
     .picturebox {
-      display: flex;
-      flex-direction: column;
-      gap: 10px; 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
     .desc {
       position: relative;
       margin-bottom: 10px;
-      break-inside: avoid; 
+      break-inside: avoid;
       -webkit-column-break-inside: avoid;
       page-break-inside: avoid;
     }
@@ -87,27 +59,15 @@
       opacity: 0.2;
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 900px) {
       .picturebox {
-        columns: 1;
-      }
-
-      .categoryname {
-        font-size: 24px;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media screen and (max-width: 800px) {
-      #gallerybox {
-        flex-direction: column;
-        height: auto;
-      }
-      .gallerycolumn {
-        height: auto;
-        margin-bottom: 40px;
-      }
+    @media screen and (max-width: 600px) {
       .picturebox {
-        columns: 1;
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -117,39 +77,27 @@
   <h1 class="header">My Art Gallery</h1>
 
   <div id="gallerybox">
+    <div class="picturebox">
+      <div class="desc">
+        <img src="paintings/painting1.jpg" alt="Painting 1" />
+        <div class="text">Painting 1 Description</div>
+      </div>
 
-    <!-- Paintings column -->
-    <div class="gallerycolumn">
-      <div class="categoryname">Paintings</div>
-      <div class="picturebox">
-        <div class="desc">
-          <img src="paintings/painting1.jpg" alt="Painting 1" />
-          <div class="text">Painting 1 Description</div>
-        </div>
-        <div class="desc">
-          <img src="paintings/painting2.jpg" alt="Painting 2" />
-          <div class="text">Painting 2 Description</div>
-        </div>
-        <!-- Add more paintings here -->
+      <div class="desc">
+        <img src="paintings/painting2.jpg" alt="Painting 2" />
+        <div class="text">Painting 2 Description</div>
+      </div>
+
+      <div class="desc">
+        <img src="collages/collage1.jpg" alt="Collage 1" />
+        <div class="text">Collage 1 Description</div>
+      </div>
+
+      <div class="desc">
+        <img src="collages/collage2.jpg" alt="Collage 2" />
+        <div class="text">Collage 2 Description</div>
       </div>
     </div>
-
-    <!-- Collages column -->
-    <div class="gallerycolumn">
-      <div class="categoryname">Collages</div>
-      <div class="picturebox">
-        <div class="desc">
-          <img src="collages/collage1.jpg" alt="Collage 1" />
-          <div class="text">Collage 1 Description</div>
-        </div>
-        <div class="desc">
-          <img src="collages/collage2.jpg" alt="Collage 2" />
-          <div class="text">Collage 2 Description</div>
-        </div>
-        <!-- Add more collages here -->
-      </div>
-    </div>
-
   </div>
 
 </body>
