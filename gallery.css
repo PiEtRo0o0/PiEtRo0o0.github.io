@@ -1,104 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gallery</title>
-  <style>
-    @font-face {
-      font-family: 'SangBleu';
-      src: url('sangbleu-kingdom-medium.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
+@font-face {
+  font-family: 'SangBleu';
+  src: url('sangbleu-kingdom-medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-    body {
-      background: linear-gradient(90deg, #F28500, #CCCCFF);
-      font-family: 'SangBleu', serif;
-      margin: 0;
-      color: #222222;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+body {
+  margin: 0;
+  background: linear-gradient(90deg, #F28500 0%, #CCCCFF 100%);
+  font-family: 'SangBleu', serif;
+  color: #222222;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
-    ::-webkit-scrollbar {
-      display: none;
-    }
+::-webkit-scrollbar {
+  display: none;
+}
 
-    a {
-      color: blue;
-    }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: transparent;
+  font-family: 'SangBleu', serif;
+}
 
-    #gallerybox {
-      margin: 20px 30px 30px;
-    }
+.helement {
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+}
 
-    .picturebox {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .desc {
-      position: relative;
-      margin-bottom: 10px;
-      break-inside: avoid;
-      -webkit-column-break-inside: avoid;
-      page-break-inside: avoid;
-    }
+.loader {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+.loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.loader img.gif {
+  width: 50px; height: 50px;
+  object-fit: contain;
+}
 
-    img {
-      vertical-align: middle;
-      opacity: 1;
-      width: 100%;
-      border-radius: 5px;
-      transition: opacity 0.3s ease;
-    }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.2rem;
+  padding: 2rem 5vw;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-    img:hover {
-      opacity: 0.2;
-    }
+.project-card {
+  background: #fffdfaee;
+  border-radius: 11px;
+  box-shadow: 0 2px 16px rgba(80,80,80,0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: box-shadow 0.22s, transform 0.19s;
+}
 
-    @media screen and (max-width: 900px) {
-      .picturebox {
-        grid-template-columns: repeat(2, 2fr);
-      }
-    }
+.project-card a {
+  position: relative;
+  display: block;
+}
 
-    @media screen and (max-width: 600px) {
-      .picturebox {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
+.project-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+  display: block;
+  transition: opacity 0.3s;
+}
 
-  <h1 class="header">My Art Gallery</h1>
+.project-card img:hover {
+  opacity: 0.2;
+}
 
-  <div id="gallerybox">
-    <div class="picturebox">
-      <div class="desc">
-        <img src="paintings/painting1.jpg" alt="Painting 1" />
-        <div class="text">Painting 1 Description</div>
-      </div>
+/* Overlay details - hidden by default, show on hover/focus */
+.project-overlay {
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.91);
+  color: #222;
+  opacity: 0;
+  transition: opacity 0.22s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.8rem 1.2rem 1.2rem 1.2rem;
+  text-align: center;
+  pointer-events: none; /* Ensures link is clickable */
+}
 
-      <div class="desc">
-        <img src="paintings/painting2.jpg" alt="Painting 2" />
-        <div class="text">Painting 2 Description</div>
-      </div>
+.project-card:hover .project-overlay,
+.project-card:focus-within .project-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-      <div class="desc">
-        <img src="collages/collage1.jpg" alt="Collage 1" />
-        <div class="text">Collage 1 Description</div>
-      </div>
+.project-overlay h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.6rem 0;
+  font-weight: 600;
+  font-family: 'Roboto Mono', monospace;
+}
 
-      <div class="desc">
-        <img src="collages/collage2.jpg" alt="Collage 2" />
-        <div class="text">Collage 2 Description</div>
-      </div>
-    </div>
-  </div>
+.tags {
+  margin-bottom: 0.7rem;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.89rem;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 0.19em 0.68em;
+  margin-right: 0.42em;
+  margin-bottom: 0.2em;
+  background: #F28500;
+  color: #fff;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+  font-family: 'Roboto Mono', monospace;
+}
+.tag.painting { background: #F28500; }
+.tag.performance { background: #8c6ff4; }
+.tag.installation { background: #CCCCFF; color: #222; border: 1px solid #F28500; }
+.tag.writing { background: #222; color: #fff; }
+.tag.collage { background: #b8860b; color: #fff; }
+.tag.drawing { background: #888; color: #fff; }
+.tag.mixedmedia { background: #8c6ff4; color: #fff; }
+.tag.photography { background: #222; color: #fff; }
+.tag.year { background: #fff; color: #F28500; border: 1px solid #F28500; }
 
-</body>
-</html>
+.project-overlay p {
+  margin: 0.5em 0 0 0;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 15px;
+  color: #222;
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 3vw;
+    gap: 1.3rem;
+  }
+  .header .helement {
+    font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0.7rem 2vw;
+    gap: 1rem;
+  }
+  .header .helement {
+    font-size: 15px;
+  }
+}
