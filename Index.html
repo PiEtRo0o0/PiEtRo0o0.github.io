@@ -14,99 +14,153 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
   <style>
+    body {
+      background: linear-gradient(90deg, #F28500 0%, #CCCCFF 100%);
+      font-family: 'SangBleu', serif;
+      color: #222;
+      margin: 0;
+    }
+
     .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px;
-  background-color: transparent; /* or transparent, depending on your design */
-  font-family: 'SangBleu', serif; /* or whatever font you want */
-}
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: transparent;
+      font-family: 'SangBleu', serif;
+    }
 
-.helement {
-  font-size: 25px;
-  font-weight: bold;
-  color: #000;
-}
+    .helement {
+      font-size: 25px;
+      font-weight: bold;
+      color: #000;
+    }
 
-a {
-  text-decoration: none;
-}
-.loader {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease;
-}
+    a {
+      text-decoration: none;
+    }
 
-.loader.hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
+    .loader {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    .loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+    .loader img.gif {
+      width: 50px; height: 50px;
+      object-fit: contain;
+    }
 
-.loader img.gif {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-}
+    /* Project Card Gallery Styles */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.2rem;
+      padding: 2rem 5vw;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-    
-    .picturebox .desc {
-      position: relative;
+    .project-card {
+      background: #fffdfaee;
+      border-radius: 11px;
+      box-shadow: 0 2px 16px rgba(80,80,80,0.07);
       overflow: hidden;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.22s, transform 0.19s;
+      position: relative;
     }
-    .picturebox .desc img {
-      display: block;
+
+    .project-card:hover {
+      box-shadow: 0 8px 28px rgba(242,133,0,0.19), 0 4px 18px rgba(127,89,255,0.09);
+      transform: translateY(-7px) scale(1.016);
+    }
+
+    .project-card img {
       width: 100%;
-      height: auto;
-      border-radius: 5px;
-      transition: opacity 0.3s ease;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+      transition: opacity 0.3s;
+      display: block;
     }
-    .picturebox .desc:hover img {
+    .project-card:hover img {
       opacity: 0.3;
     }
-    .picturebox .desc::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.75) 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      border-radius: 5px;
-      z-index: 2;
-    }
-    .picturebox .desc:hover::before {
-      opacity: 1;
-    }
-    .picturebox .desc .text {
-      position: absolute;
-      bottom: 12px;
-      left: 12px;
-      right: 12px;
-      color: white;
-      font-family: 'Roboto Mono', monospace;
-      font-size: 14px;
-      font-weight: 600;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 3;
-      pointer-events: none;
-      text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
-    }
-    .picturebox .desc:hover .text {
-      opacity: 1;
-    }
-    </style>
 
+    .project-info {
+      padding: 1rem 1.2rem 1.2rem 1.2rem;
+    }
+
+    .project-info h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.6rem 0;
+      font-weight: 600;
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    .tags {
+      margin-bottom: 0.7rem;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.89rem;
+      font-weight: 500;
+      border-radius: 6px;
+      padding: 0.19em 0.68em;
+      margin-right: 0.42em;
+      margin-bottom: 0.2em;
+      background: #F28500;
+      color: #fff;
+      letter-spacing: 0.03em;
+      vertical-align: middle;
+      font-family: 'Roboto Mono', monospace;
+    }
+    .tag.painting { background: #F28500; }
+    .tag.performance { background: #8c6ff4; }
+    .tag.installation { background: #CCCCFF; color: #222; border: 1px solid #F28500; }
+    .tag.writing { background: #222; color: #fff; }
+    .tag.year { background: #fff; color: #F28500; border: 1px solid #F28500; }
+
+    .project-info p {
+      margin: 0.5em 0 0 0;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 15px;
+      color: #222;
+    }
+
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem 3vw;
+        gap: 1.3rem;
+      }
+      .header .helement {
+        font-size: 20px;
+      }
+    }
+    @media (max-width: 600px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0.7rem 2vw;
+        gap: 1rem;
+      }
+      .header .helement {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
 <body>
   <div class="loader">
     <img class="gif" src="loader-gif/XVo6.gif" alt="Loading..." />
@@ -116,10 +170,6 @@ a {
     <div class="helement">PIETRO GORINI</div>
     <a class="helement" href="about.html">about</a>
   </div>
-
-  <div id="gallerybox">
-    <div class="gallerycolumn">
-      <div class="picturebox"> 
           
 
         <a class="desc"  href="stART_compressed/img01.jpg">
