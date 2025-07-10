@@ -1,166 +1,104 @@
-@font-face {
-  font-family: 'SangBleu';
-  src: url('sangbleu-kingdom-medium.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery</title>
+  <style>
+    @font-face {
+      font-family: 'SangBleu';
+      src: url('sangbleu-kingdom-medium.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-body {
-  margin: 0;
-  background: linear-gradient(90deg, #F28500 0%, #CCCCFF 100%);
-  font-family: 'SangBleu', serif;
-  color: #222222;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+    body {
+      background: linear-gradient(90deg, #F28500, #CCCCFF);
+      font-family: 'SangBleu', serif;
+      margin: 0;
+      color: #222222;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
 
-::-webkit-scrollbar {
-  display: none;
-}
+    ::-webkit-scrollbar {
+      display: none;
+    }
 
-header {
-  background: rgba(255,255,255,0.7);
-  padding: 1rem 0 0.5rem 0;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-}
+    a {
+      color: blue;
+    }
 
-header nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  gap: 2.2rem;
-  margin: 0 0 1rem 0;
-}
+    #gallerybox {
+      margin: 20px 30px 30px;
+    }
 
-header nav a {
-  color: #222222;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  letter-spacing: 0.03em;
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.2s;
-}
+    .picturebox {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
 
-header nav a:hover {
-  border-bottom: 2px solid #F28500;
-}
+    .desc {
+      position: relative;
+      margin-bottom: 10px;
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+    }
 
-h1 {
-  margin: 0 0 1.2rem 0;
-  font-size: 2.3rem;
-  letter-spacing: 0.07em;
-}
+    img {
+      vertical-align: middle;
+      opacity: 1;
+      width: 100%;
+      border-radius: 5px;
+      transition: opacity 0.3s ease;
+    }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 2rem;
-  padding: 2rem 5vw;
-  max-width: 1400px;
-  margin: auto;
-}
+    img:hover {
+      opacity: 0.2;
+    }
 
-.project-card {
-  background: #fffdfaee;
-  border-radius: 11px;
-  box-shadow: 0 2px 16px rgba(80,80,80,0.07);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.22s, transform 0.19s;
-}
+    @media screen and (max-width: 900px) {
+      .picturebox {
+        grid-template-columns: repeat(2, 2fr);
+      }
+    }
 
-/* --- Old Clean Hover Effect --- */
-.project-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-bottom: 1px solid #eee;
-  transition: opacity 0.3s;
-}
+    @media screen and (max-width: 600px) {
+      .picturebox {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
 
-.project-card img:hover {
-  opacity: 0.2;
-}
-/* --- End Old Clean Hover Effect --- */
+  <h1 class="header">My Art Gallery</h1>
 
-.project-info {
-  padding: 1rem 1.2rem 1.2rem 1.2rem;
-}
+  <div id="gallerybox">
+    <div class="picturebox">
+      <div class="desc">
+        <img src="paintings/painting1.jpg" alt="Painting 1" />
+        <div class="text">Painting 1 Description</div>
+      </div>
 
-.project-info h2 {
-  font-size: 1.25rem;
-  margin: 0 0 0.6rem 0;
-  font-weight: 600;
-}
+      <div class="desc">
+        <img src="paintings/painting2.jpg" alt="Painting 2" />
+        <div class="text">Painting 2 Description</div>
+      </div>
 
-.tags {
-  margin-bottom: 0.7rem;
-}
+      <div class="desc">
+        <img src="collages/collage1.jpg" alt="Collage 1" />
+        <div class="text">Collage 1 Description</div>
+      </div>
 
-.tag {
-  display: inline-block;
-  font-size: 0.89rem;
-  font-weight: 500;
-  border-radius: 6px;
-  padding: 0.19em 0.68em;
-  margin-right: 0.42em;
-  margin-bottom: 0.2em;
-  background: #F28500;
-  color: #fff;
-  letter-spacing: 0.03em;
-  vertical-align: middle;
-}
-.tag.painting { background: #F28500; }
-.tag.performance { background: #8c6ff4; }
-.tag.installation { background: #CCCCFF; color: #222; border: 1px solid #F28500; }
-.tag.writing { background: #222; color: #fff; }
-.tag.collage { background: #b8860b; color: #fff; }
-.tag.drawing { background: #888; color: #fff; }
-.tag.mixedmedia { background: #8c6ff4; color: #fff; }
-.tag.photography { background: #222; color: #fff; }
-.tag.year { background: #fff; color: #F28500; border: 1px solid #F28500; }
+      <div class="desc">
+        <img src="collages/collage2.jpg" alt="Collage 2" />
+        <div class="text">Collage 2 Description</div>
+      </div>
+    </div>
+  </div>
 
-.writing-preview {
-  padding: 1.4rem 1.2rem 1.7rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.writing-preview h2 {
-  margin: 0 0 0.7rem 0;
-}
-
-.read-more {
-  margin-top: 0.7rem;
-  color: #8c6ff4;
-  text-decoration: underline;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 1rem 3vw;
-    gap: 1.3rem;
-  }
-  header h1 {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-    padding: 0.7rem 2vw;
-    gap: 1rem;
-  }
-  header h1 {
-    font-size: 1.2rem;
-  }
-}
+</body>
+</html>
