@@ -48,37 +48,37 @@ a {
   z-index: 9999;
   transition: opacity 0.5s ease;
 }
+
 .loader.hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
 }
+
 .loader img.gif {
-  width: 50px; height: 50px;
+  width: 50px; 
+  height: 50px;
   object-fit: contain;
 }
 
 .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+  column-count: 4;
+  column-gap: 2rem;
   padding: 2rem 5vw;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .project-card {
-  background: #fffdfaee;
+  background: transparent; /* no white blocks */
   border-radius: 11px;
   box-shadow: 0 2px 16px rgba(80,80,80,0.07);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 300px;
+  display: inline-block;
+  width: auto; /* natural width */
   margin-bottom: 2rem;
   position: relative;
   transition: box-shadow 0.22s, transform 0.19s;
+  break-inside: avoid; /* keep cards from breaking between columns */
 }
 
 .project-card a {
@@ -87,10 +87,9 @@ a {
 }
 
 .project-card img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  object-fit: unset;
+  width: 100%; /* let images fill the card width */
+  height: auto; /* keep natural aspect ratio */
+  object-fit: unset; /* no forced cropping */
   display: block;
   border: none;
   transition: opacity 0.3s;
@@ -100,6 +99,7 @@ a {
   opacity: 0.2;
 }
 
+/* Overlay */
 .project-overlay {
   position: absolute;
   left: 0; top: 0; right: 0; bottom: 0;
