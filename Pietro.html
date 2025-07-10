@@ -12,101 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
-
-  <style>
-    .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px;
-  background-color: transparent; /* or transparent, depending on your design */
-  font-family: 'SangBleu', serif; /* or whatever font you want */
-}
-
-.helement {
-  font-size: 25px;
-  font-weight: bold;
-  color: #000;
-}
-
-a {
-  text-decoration: none;
-}
-.loader {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease;
-}
-
-.loader.hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.loader img.gif {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-}
-
-    
-    .picturebox .desc {
-      position: relative;
-      overflow: hidden;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-    .picturebox .desc img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-      transition: opacity 0.3s ease;
-    }
-    .picturebox .desc:hover img {
-      opacity: 0.3;
-    }
-    .picturebox .desc::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.75) 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      border-radius: 5px;
-      z-index: 2;
-    }
-    .picturebox .desc:hover::before {
-      opacity: 1;
-    }
-    .picturebox .desc .text {
-      position: absolute;
-      bottom: 12px;
-      left: 12px;
-      right: 12px;
-      color: white;
-      font-family: 'Roboto Mono', monospace;
-      font-size: 14px;
-      font-weight: 600;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 3;
-      pointer-events: none;
-      text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
-    }
-    .picturebox .desc:hover .text {
-      opacity: 1;
-    }
-    </style>
-
+</head>
 <body>
   <div class="loader">
     <img class="gif" src="loader-gif/XVo6.gif" alt="Loading..." />
@@ -116,21 +22,35 @@ a {
     <div class="helement">PIETRO GORINI</div>
     <a class="helement" href="about.html">about</a>
   </div>
-
-  <div id="gallerybox">
-    <div class="gallerycolumn">
-      <div class="picturebox"> 
           
-
-        <a class="desc"  href="stART_compressed/img01.jpg">
-          <img src="stART_compressed/img01.jpg" alt="(to worship), 210x240 cm, oil on canvas." />
-          <div class="text">(to worship), 210x240 cm, oil on canvas.</div>
-        </a>
-
-        <a class="desc"  href="stART_compressed/img02.jpg">
-          <img src="stART_compressed/img02.jpg" alt="Untitled, 200x150 cm, oil on canvas." />
-          <div class="text">Untitled, 200x150 cm, oil on canvas.</div>
-        </a>
+  <section id="projects" class="projects-grid">
+    <!-- Example cards, add all your project-cards below this line -->
+    <div class="project-card">
+      <a href="stART_compressed/img01.jpg" target="_blank">
+        <img src="stART_compressed/img01.jpg" alt="(to worship), 210x240 cm, oil on canvas." />
+        <div class="project-overlay">
+          <h2>(to worship)</h2>
+          <div class="tags">
+            <span class="tag painting">Painting</span>
+            <span class="tag year">2023</span>
+          </div>
+          <p>210x240 cm, oil on canvas.</p>
+        </div>
+      </a>
+    </div>
+    <div class="project-card">
+      <a href="stART_compressed/img02.jpg" target="_blank">
+        <img src="stART_compressed/img02.jpg" alt="Untitled, 200x150 cm, oil on canvas." />
+        <div class="project-overlay">
+          <h2>(Untitled)</h2>
+          <div class="tags">
+            <span class="tag painting">Painting</span>
+            <span class="tag year">2023</span>
+          </div>
+          <p>200x150 cm, oil on canvas.</p>
+        </div>
+      </a>
+    </div>
                     <a class="descbox"  href="stART_compressed/img03.jpg">
                         <div class="desc"> 
                         <div class="text">THE KISS, 150x210 cm, oil on canvas.</div> 
