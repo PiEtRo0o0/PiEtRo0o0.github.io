@@ -3,102 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gallery</title>
-  <style>
-    @font-face {
-      font-family: 'SangBleu';
-      src: url('sangbleu-kingdom-medium.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    body {
-      background: linear-gradient(90deg, #F28500, #CCCCFF);
-      font-family: 'SangBleu', serif;
-      margin: 0;
-      color: #222222;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
-    a {
-      color: blue;
-    }
-
-    #gallerybox {
-      margin: 20px 30px 30px;
-    }
-
-    .picturebox {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-    }
-
-    .desc {
-      position: relative;
-      margin-bottom: 10px;
-      break-inside: avoid;
-      -webkit-column-break-inside: avoid;
-      page-break-inside: avoid;
-    }
-
-    img {
-      vertical-align: middle;
-      opacity: 1;
-      width: 100%;
-      border-radius: 5px;
-      transition: opacity 0.3s ease;
-    }
-
-    img:hover {
-      opacity: 0.2;
-    }
-
-    @media screen and (max-width: 900px) {
-      .picturebox {
-        grid-template-columns: repeat(2, 2fr);
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      .picturebox {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <title>Pietro’s Art & Projects</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#writings">Writings</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <h1>Pietro’s Art & Research</h1>
+  </header>
 
-  <h1 class="header">My Art Gallery</h1>
-
-  <div id="gallerybox">
-    <div class="picturebox">
-      <div class="desc">
+  <main>
+    <section id="projects" class="grid">
+      <article class="project-card">
         <img src="paintings/painting1.jpg" alt="Painting 1" />
-        <div class="text">Painting 1 Description</div>
-      </div>
+        <div class="project-info">
+          <h2>Painting Title</h2>
+          <div class="tags"><span class="tag painting">Painting</span><span class="tag year">2025</span></div>
+          <p>Short description of the painting/project, concept, or context.</p>
+        </div>
+      </article>
 
-      <div class="desc">
-        <img src="paintings/painting2.jpg" alt="Painting 2" />
-        <div class="text">Painting 2 Description</div>
-      </div>
+      <article class="project-card">
+        <img src="performance/performance1.jpg" alt="Performance 1" />
+        <div class="project-info">
+          <h2>Performance Title</h2>
+          <div class="tags"><span class="tag performance">Performance</span><span class="tag year">2024</span></div>
+          <p>Site-specific performance involving audience participation and research on space.</p>
+        </div>
+      </article>
 
-      <div class="desc">
-        <img src="collages/collage1.jpg" alt="Collage 1" />
-        <div class="text">Collage 1 Description</div>
-      </div>
+      <article class="project-card">
+        <img src="installations/installation1.jpg" alt="Installation 1" />
+        <div class="project-info">
+          <h2>Installation Title</h2>
+          <div class="tags"><span class="tag installation">Installation</span><span class="tag year">2024</span></div>
+          <p>Immersive installation exploring the intersection of text and space.</p>
+        </div>
+      </article>
 
-      <div class="desc">
-        <img src="collages/collage2.jpg" alt="Collage 2" />
-        <div class="text">Collage 2 Description</div>
-      </div>
-    </div>
-  </div>
+      <article class="project-card writing-card">
+        <div class="writing-preview">
+          <h2>Essay or Research Title</h2>
+          <div class="tags"><span class="tag writing">Writing</span><span class="tag year">2023</span></div>
+          <p>Excerpt from your essay or research project...</p>
+          <a href="writings/writing1.pdf" class="read-more">Read Full Text</a>
+        </div>
+      </article>
 
+      <!-- More project-cards as needed -->
+    </section>
+  </main>
 </body>
 </html>
