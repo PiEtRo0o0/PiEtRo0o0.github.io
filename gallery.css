@@ -84,11 +84,12 @@ a {
 }
 
 .project-card img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
-  object-fit: contain;
-  border-bottom: 1px solid #eee;
+  object-fit: unset;
   display: block;
+  border: none;
   transition: opacity 0.3s;
 }
 
