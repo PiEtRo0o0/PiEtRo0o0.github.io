@@ -70,50 +70,69 @@ a {
 }
 
 .project-card {
-  background: transparent; /* no white blocks */
+  background: transparent;
   border-radius: 11px;
-  box-shadow: 0 2px 16px rgba(80,80,80,0.07);
+  box-shadow: 0 4px 20px rgba(80, 80, 80, 0.1);
   display: inline-block;
-  width: auto; /* natural width */
-  margin-bottom: 2rem;
+  width: auto;
+  margin-bottom: 2.5rem;
   position: relative;
-  transition: box-shadow 0.22s, transform 0.19s;
-  break-inside: avoid; /* keep cards from breaking between columns */
+  transition: box-shadow 0.25s ease, transform 0.22s ease;
+  break-inside: avoid;
+  filter: drop-shadow(2px 4px 2px rgba(0,0,0,0.05));
 }
 
 .project-card a {
   position: relative;
   display: block;
+  cursor: pointer;
 }
 
 .project-card img {
-  width: 100%; /* let images fill the card width */
-  height: auto; /* keep natural aspect ratio */
-  object-fit: unset; /* no forced cropping */
+  width: 100%;
+  height: auto;
+  object-fit: unset;
   display: block;
-  border: none;
-  transition: opacity 0.3s;
-}
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+  filter: saturate(0.9) contrast(1.05);
+} /* close this block */
 
 .project-card img:hover {
-  opacity: 0.2;
+  opacity: 0.25;
+  border-color: #F28500;
+  filter: saturate(1.1) contrast(1.2);
+}
+
+.project-card:hover {
+  transform: translateY(-6px) rotate(-1.2deg);
+  box-shadow: 0 10px 30px rgba(80, 80, 80, 0.2);
+  filter: drop-shadow(4px 8px 6px rgba(0,0,0,0.1));
 }
 
 /* Overlay */
 .project-overlay {
   position: absolute;
   left: 0; top: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.52);
+  background: rgba(0, 0, 0, 0.48);
   color: #fff;
   opacity: 0;
-  transition: opacity 0.22s;
+  transition: opacity 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.8rem 1.2rem 1.2rem 1.2rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
   text-align: center;
   pointer-events: none;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  border-radius: 11px;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.15);
+  transform: rotate(-0.5deg);
+  letter-spacing: 0.02em;
 }
 
 .project-card:hover .project-overlay,
@@ -123,29 +142,35 @@ a {
 }
 
 .project-overlay h2 {
-  font-size: 1.1rem;
-  margin: 0 0 0.6rem 0;
-  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0 0 0.7rem 0;
+  font-weight: 700;
   font-family: 'Roboto Mono', monospace;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  transform: rotate(-1deg);
 }
 
 .tags {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
+  transform: rotate(0.5deg);
 }
 
 .tag {
   display: inline-block;
-  font-size: 0.89rem;
-  font-weight: 500;
-  border-radius: 6px;
-  padding: 0.19em 0.68em;
-  margin-right: 0.42em;
-  margin-bottom: 0.2em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 0.25em 0.7em;
+  margin-right: 0.4em;
+  margin-bottom: 0.25em;
   background: #F28500;
   color: #fff;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   vertical-align: middle;
   font-family: 'Roboto Mono', monospace;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  transform: rotate(-0.3deg);
+  transition: background-color 0.3s ease;
 }
 
 .tag.painting { background: #F28500; }
@@ -163,6 +188,9 @@ a {
   font-family: 'Roboto Mono', monospace;
   font-size: 15px;
   color: #fff;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  transform: rotate(0.3deg);
 }
 
 @media (max-width: 900px) {
