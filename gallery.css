@@ -100,8 +100,8 @@ a {
 .project-overlay {
   position: absolute;
   left: 0; top: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.91);
-  color: #222;
+  background: rgba(0,0,0,0.52); /* dark semi-transparent overlay */
+  color: #fff;
   opacity: 0;
   transition: opacity 0.22s;
   display: flex;
@@ -157,7 +157,7 @@ a {
   margin: 0.5em 0 0 0;
   font-family: 'Roboto Mono', monospace;
   font-size: 15px;
-  color: #222;
+  color: #fff;
 }
 
 @media (max-width: 900px) {
