@@ -1,63 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pietro’s Art & Projects</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#writings">Writings</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
-    <h1>Pietro’s Art & Research</h1>
-  </header>
+@font-face {
+  font-family: 'SangBleu';
+  src: url('sangbleu-kingdom-medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  <main>
-    <section id="projects" class="grid">
-      <article class="project-card">
-        <img src="paintings/painting1.jpg" alt="Painting 1" />
-        <div class="project-info">
-          <h2>Painting Title</h2>
-          <div class="tags"><span class="tag painting">Painting</span><span class="tag year">2025</span></div>
-          <p>Short description of the painting/project, concept, or context.</p>
-        </div>
-      </article>
+body {
+  margin: 0;
+  background: linear-gradient(90deg, #F28500 0%, #CCCCFF 100%);
+  font-family: 'SangBleu', serif;
+  color: #222222;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
-      <article class="project-card">
-        <img src="performance/performance1.jpg" alt="Performance 1" />
-        <div class="project-info">
-          <h2>Performance Title</h2>
-          <div class="tags"><span class="tag performance">Performance</span><span class="tag year">2024</span></div>
-          <p>Site-specific performance involving audience participation and research on space.</p>
-        </div>
-      </article>
+::-webkit-scrollbar {
+  display: none;
+}
 
-      <article class="project-card">
-        <img src="installations/installation1.jpg" alt="Installation 1" />
-        <div class="project-info">
-          <h2>Installation Title</h2>
-          <div class="tags"><span class="tag installation">Installation</span><span class="tag year">2024</span></div>
-          <p>Immersive installation exploring the intersection of text and space.</p>
-        </div>
-      </article>
+header {
+  background: rgba(255,255,255,0.7);
+  padding: 1rem 0 0.5rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
 
-      <article class="project-card writing-card">
-        <div class="writing-preview">
-          <h2>Essay or Research Title</h2>
-          <div class="tags"><span class="tag writing">Writing</span><span class="tag year">2023</span></div>
-          <p>Excerpt from your essay or research project...</p>
-          <a href="writings/writing1.pdf" class="read-more">Read Full Text</a>
-        </div>
-      </article>
+header nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: 2.2rem;
+  margin: 0 0 1rem 0;
+}
 
-      <!-- More project-cards as needed -->
-    </section>
-  </main>
-</body>
-</html>
+header nav a {
+  color: #222222;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+header nav a:hover {
+  border-bottom: 2px solid #F28500;
+}
+
+h1 {
+  margin: 0 0 1.2rem 0;
+  font-size: 2.3rem;
+  letter-spacing: 0.07em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+  padding: 2rem 5vw;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.project-card {
+  background: #fffdfaee;
+  border-radius: 11px;
+  box-shadow: 0 2px 16px rgba(80,80,80,0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.22s, transform 0.19s;
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 28px rgba(242,133,0,0.19), 0 4px 18px rgba(127,89,255,0.09);
+  transform: translateY(-7px) scale(1.016);
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+  transition: opacity 0.3s;
+}
+
+.project-card img:hover {
+  opacity: 0.6;
+}
+
+.project-info {
+  padding: 1rem 1.2rem 1.2rem 1.2rem;
+}
+
+.project-info h2 {
+  font-size: 1.25rem;
+  margin: 0 0 0.6rem 0;
+  font-weight: 600;
+}
+
+.tags {
+  margin-bottom: 0.7rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.89rem;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 0.19em 0.68em;
+  margin-right: 0.42em;
+  margin-bottom: 0.2em;
+  background: #F28500;
+  color: #fff;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
+.tag.painting { background: #F28500; }
+.tag.performance { background: #8c6ff4; }
+.tag.installation { background: #CCCCFF; color: #222; border: 1px solid #F28500; }
+.tag.writing { background: #222; color: #fff; }
+.tag.year { background: #fff; color: #F28500; border: 1px solid #F28500; }
+
+.writing-preview {
+  padding: 1.4rem 1.2rem 1.7rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.writing-preview h2 {
+  margin: 0 0 0.7rem 0;
+}
+
+.read-more {
+  margin-top: 0.7rem;
+  color: #8c6ff4;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 3vw;
+    gap: 1.3rem;
+  }
+  header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 0.7rem 2vw;
+    gap: 1rem;
+  }
+  header h1 {
+    font-size: 1.2rem;
+  }
+}
