@@ -93,7 +93,7 @@ a {
   height: auto;
   object-fit: unset;
   display: block;
-  border-radius: 8px;
+  border-radius: 0px;
   border: 2px solid transparent;
   transition: opacity 0.3s ease, border-color 0.3s ease;
   filter: saturate(0.9) contrast(1.05);
