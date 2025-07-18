@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'SangBleu';
-  src: url('sangbleu-kingdom-medium.ttf') format('truetype');
+  font-family: 'Aujournuit';
+  src: url('Aujournuit-Regular.otf') format('otf');
   font-weight: normal;
   font-style: normal;
 }
@@ -8,7 +8,7 @@
 body {
   margin: 0;
   background: linear-gradient(90deg, #F28500 0%, #CCCCFF 100%);
-  font-family: 'SangBleu', serif;
+  font-family: 'Aujournuit', sans-serif;
   color: #222222;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -24,7 +24,7 @@ body {
   align-items: center;
   padding: 20px 30px;
   background-color: transparent;
-  font-family: 'SangBleu', serif;
+  font-family: 'Aujournuit', sans-serif;
 }
 
 .helement {
@@ -145,7 +145,7 @@ a {
   font-size: 1.2rem;
   margin: 0 0 0.7rem 0;
   font-weight: 700;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Aujournuit', sans-serif;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
   transform: rotate(-1deg);
 }
@@ -167,7 +167,7 @@ a {
   color: #fff;
   letter-spacing: 0.04em;
   vertical-align: middle;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Aujournuit', sans-serif;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
   transform: rotate(-0.3deg);
   transition: background-color 0.3s ease;
@@ -185,7 +185,7 @@ a {
 
 .project-overlay p {
   margin: 0.5em 0 0 0;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Aujournuit', sans-serif;
   font-size: 15px;
   color: #fff;
   font-style: italic;
