@@ -121,7 +121,7 @@ a {
   filter: drop-shadow(4px 8px 6px rgba(0,0,0,0.1));
 }
 
-/* Overlay */
+
 .project-overlay {
   position: absolute;
   left: 0; top: 0; right: 0; bottom: 0;
