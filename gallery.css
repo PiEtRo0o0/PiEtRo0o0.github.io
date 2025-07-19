@@ -34,7 +34,7 @@ body {
 }
 
 .helement {
-  font-size: 30px;
+  font-size: 35px;
   background: linear-gradient(90deg, #b36b00 0%, #9999cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
