@@ -18,7 +18,7 @@ body {
   color: #222222;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding-top: 60px; 
+  padding-top: 50px; 
 }
 
 ::-webkit-scrollbar {
@@ -28,7 +28,7 @@ body {
 .header {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 95%;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
