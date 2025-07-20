@@ -18,7 +18,7 @@ body {
   color: #222222;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding-top: 80px; 
+  padding-top: 50px; 
 }
 
 ::-webkit-scrollbar {
@@ -28,13 +28,13 @@ body {
 .header {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 90%;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-  background-color: transparent;
+  background-color: linear-gradient(90deg, #D47400 0%, #9999dd 100%);
   font-family: 'Giga', serif;
 }
 
