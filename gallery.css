@@ -188,7 +188,7 @@ a {
   transition: background-color 0.3s ease;
 }
 
-.tag.painting { background: #F28500; }
+.tag.painting { background: #EC5800; }
 .tag.performance { background: #8c6ff4; }
 .tag.installation { background: #CCCCFF; color: #222; border: 1px solid #F28500; }
 .tag.writing { background: #222; color: #fff; }
@@ -196,7 +196,7 @@ a {
 .tag.drawing { background: #888; color: #fff; }
 .tag.mixedmedia { background: #8c6ff4; color: #fff; }
 .tag.photography { background: #222; color: #fff; }
-.tag.year { background: #fff; color: #F28500; border: 1px solid #F28500; }
+.tag.year { background: #1f1828; color: #F28500; border: 1px solid #F28500; }
 
 .project-overlay p {
   margin: 0.5em 0 0 0;
@@ -229,6 +229,7 @@ a {
     font-size: 15px;
   }
 }
+
 
 
 
