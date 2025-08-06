@@ -34,7 +34,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-  background-color: linear-gradient(90deg, #D47400 0%, #9999dd 100%);
+  background-color: linear-gradient(90deg, #EC5800 0%, #CCCCFF 100%);
   font-family: 'Giga', serif;
 }
 
@@ -229,4 +229,5 @@ a {
     font-size: 15px;
   }
 }
+
 
