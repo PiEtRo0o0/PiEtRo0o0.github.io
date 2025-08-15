@@ -7,11 +7,11 @@
 }
 @font-face {
   font-family: 'SangBleu';
-  src: url('sangbleu-kingdom-medium.ttf') format('truetype');
+  src: url('sangbleu-kingdom-medium.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
-
 body {
   margin: 0;
   background: linear-gradient(90deg, #EC5800 0%, #1f1828 100%);
@@ -230,5 +230,6 @@ a {
     font-size: 15px;
   }
 }
+
 
 
