@@ -64,12 +64,6 @@ a {
   transition: opacity 0.5s ease;
 }
 
-.loader.hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
-
 .loader img.gif {
   width: 50px; 
   height: 50px;
@@ -189,12 +183,8 @@ a {
 }
 
 .tag.painting { background: #EC5800; }
-.tag.performance { background: #8c6ff4; }
 .tag.installation { background: #CCCCFF; color: #222; border: 1px solid #F28500; }
-.tag.writing { background: #222; color: #fff; }
-.tag.collage { background: #b8860b; color: #fff; }
 .tag.drawing { background: #888; color: #fff; }
-.tag.mixedmedia { background: #8c6ff4; color: #fff; }
 .tag.photography { background: #222; color: #fff; }
 .tag.year { background: #1f1828; color: #F28500; border: 1px solid #F28500; }
 
