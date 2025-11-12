@@ -43,11 +43,6 @@ body {
  background-color: linear-gradient(90deg, #EC5800 0%, #CCCCFF 100%);
   font-family: 'Aktura-Regular', serif;
 }
-.header-logo {
-  height: 40px;
-  width: auto;
-  margin: 0 10px;
-}
 
 .helement {
   font-size: 40px;
@@ -240,6 +235,7 @@ a {
     font-size: 15px;
   }
 }
+
 
 
 
